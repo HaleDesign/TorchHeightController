@@ -24,7 +24,7 @@ Don't Die.
 ## Hardware
 * Arduino: Uno R3
 * Nextion HMI Screen: NX4832T035_011
-* Makerbase: MKS TMC2160-OC V1.0
+* Driver Board: Makerbase MKS TMC2160-OC V1.0
 * 2 Fans(overkill I know): 40 x 40 x 10mm 4010 Brushless DC Cooling Fan 12v
 * Aluminum Electrolytic Capacitor(optional): Nichicon USA1H010MDD1TE 1µF 50V Aluminum Electrolytic Capacitors Radial
 * Input Connector: Cat5e Ethernet RJ-45 Keystone Jack
