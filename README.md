@@ -106,7 +106,7 @@ Follow these steps to upload your sketch:
 * Click the Upload button.
 
 ## Main Process Code 
-This code is designed to run as fast as possible. It uses a while() loop to focus on Calulations and movements when voltage in input if over the threshold.
+This code is designed to run as fast as possible. It uses a while() loop to focus on Calulations and movements when voltage input is over the threshold.
 
 ```c++ 
 // the loop function runs over and over again forever
