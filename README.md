@@ -38,8 +38,7 @@ Don't Die.
 
 ## More info:
 * Fusion 360 Design File: https://a360.co/30zrSRM
-* https://github.com/HaleDesign/TorchHeightController
-* http://hdt.xyz
+* About Hale Design Tech: http://hdt.xyz
 
 ## 3rd Party software used
  * Auduino IDE
