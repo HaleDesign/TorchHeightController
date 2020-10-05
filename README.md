@@ -2,7 +2,7 @@
 Arduino based THC that reads plasma cutter voltage and send Up and Down signals to Plasma Torch Actuator to adjust voltage to target value.
 
 ## Description
-Aim is to create a low cost and easy to use Torch Height Controller with off the shelf parts, simple easy to read code and as little electionics tinkering as possible.
+Aim is to create a low cost and easy to use Torch Height Controller with off the shelf parts, simple easy to read code and as little electronics tinkering as possible.
 This is a standalone type of THC so it requires an actuator to move the torch independent of the CNC machines controller. 
 If you interface this THC with your CNC Machine please post how you did it!
 
@@ -37,6 +37,7 @@ Don't Die.
 * https://www.patreon.com/HaleDesign
 
 ## More info:
+* Fusion 360 Design File: https://a360.co/30zrSRM
 * https://github.com/HaleDesign/TorchHeightController
 * http://hdt.xyz
 
