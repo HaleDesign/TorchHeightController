@@ -118,7 +118,7 @@ void loop()
   if(CurrentPageNumber <= 6 || CurrentPageNumber == 11){report();}
 }
 
-void process() //Calulates position and move steps
+void process() //Calculates position and move steps
 {
   oldDelay = micros();
   while(Input > (threshold+CalibrationOffset)) //Only move if cutting by checking for voltage above a threshold level
