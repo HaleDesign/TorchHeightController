@@ -246,7 +246,7 @@ void setup()
 
   threshold = EEPROM.readInt(addressThreshold);
   if (threshold == 0) {
-    threshold = 1000;
+    threshold = 4000;
   }
 
   arcStabilizeDelay = EEPROM.readInt(addressDelay);
@@ -381,6 +381,13 @@ void process() //Calulates position and move steps
       //format();
     }
   }
+  //after cut reset height
+  pos = 0;
+  //do move
+  stepper.moveTo(pos);
+  while (stepper.distanceToGo() != 0) {
+    stepper.run();
+  }
 }
 
 void trigger0() //Set last page used on startup loaded event
@@ -491,30 +498,30 @@ void trigger4() //Move motor down
   }
   THCNex.writeNum("x2.val", (int)(pos / 2));
 }
-void trigger5() //Increase allowable up movement range
+void trigger5() //Increase allowable down movement range
+{
+  minPos = minPos + (scale * steps_per_mm);
+  THCNex.writeNum("x1.val", (int)(minPos / 2));
+  EEPROM.writeInt(addressMinpos, minPos);
+}
+void trigger6() //Decrease allowable up movement range
+{ minPos = minPos - (scale * steps_per_mm);
+  THCNex.writeNum("x1.val", (int)(minPos / 2));
+  EEPROM.writeInt(addressMinpos, minPos);
+
+}
+void trigger7() //Increase allowable up movement range
 {
   maxPos = maxPos + (scale * steps_per_mm);
   THCNex.writeNum("x0.val", (int)(maxPos / 2));
   EEPROM.writeInt(addressMaxpos, maxPos);
 
 }
-void trigger6() //Decrease allowable up movement range
+void trigger8() //Decrease allowable down movement range
 {
   maxPos = maxPos - (scale * steps_per_mm);
   THCNex.writeNum("x0.val", (int)(maxPos / 2));
   EEPROM.writeInt(addressMaxpos, maxPos);
-}
-void trigger7() //Increase allowable down movement range
-{
-  minPos = minPos + (scale * steps_per_mm);
-  THCNex.writeNum("x1.val", (int)(minPos / 2));
-  EEPROM.writeInt(addressMinpos, minPos);
-}
-void trigger8() //Decrease allowable down movement range
-{
-  minPos = minPos - (scale * steps_per_mm);
-  THCNex.writeNum("x1.val", (int)(minPos / 2));
-  EEPROM.writeInt(addressMinpos, minPos);
 }
 
 void trigger9() //Increase voltage gap between aggressive and normal targeting
@@ -659,8 +666,8 @@ void trigger29() //load movement page settings
     THCNex.writeNum("bt2.val", 1);
   }
   THCNex.writeNum("x2.val", (int)(pos / 2));
-  THCNex.writeNum("x1.val", (int)(maxPos / 2));
-  THCNex.writeNum("x0.val", (int)(minPos / 2));
+  THCNex.writeNum("x0.val", (int)(maxPos / 2));
+  THCNex.writeNum("x1.val", (int)(minPos / 2));
 }
 void trigger30() //Load default page settings
 {
