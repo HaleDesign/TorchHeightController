@@ -1,3 +1,7 @@
+# IMPORTANT NOTE
+For those of you who downloed the THC.GUI.V1.0.0.tft firmware file it was missing a settings few pages... my bad... I've uploaded the new one THC.GUI.V1.0.1.tft please grab that and reflash your displays. Thanks to the members of the community that pointed this out to me!
+
+
 # TorchHeightController
 Arduino based THC that reads plasma cutter voltage and send Up and Down signals to Plasma Torch Actuator to adjust voltage to target value.
 
